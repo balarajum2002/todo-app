@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/fbb400a5c5.js" crossorigin="anonymous"></script>
+	<title></title>
+	<style type="text/css">
+		.listtype{
+			list-style: none;
+		}
+		#app{
+			background-color: darkgoldenrod;
+			justify-content:  center;
+			padding: 2%;
+			font-size: 1rem;
+		}
+		button{
+			padding: 2%;
+			background-color: darkgoldenrod;
+			justify-content: center;
+			font-size: 1rem;
+		}
+		.fa-solid{
+			background-color: greenyellow;
+
+		}
+
+	</style>
+	
+</head>
+<body>
+
+	<ul></ul>
+	<input id="app" placeholder="Enter a value">
+	<button onclick="display()">submit</button>
+	<script type="text/javascript">
+		function display() {
+			let newTodo=document.getElementById("app").value,todolist=[]
+			/*console.log(app)*/
+			todolist.push(newTodo)
+			console.log(todolist);
+			
+			if (newTodo==""){
+				alert("enter a Todo value")
+
+			}
+			else{
+				add(newTodo)
+			}
+
+            document.getElementById("app").value=""
+            }
+
+		function add(newValue) {
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li");
+			li.innerHTML=`
+			<span>${newValue}</span>
+			<i class="fa-solid
+			fa-rectangle-xmark"></i>
+
+			`
+			li.classList.add("listtype")
+			ul.appendChild(li)
+
+		}
+	</script>
+
+</body>
+</html>
